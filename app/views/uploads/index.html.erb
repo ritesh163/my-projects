@@ -1,0 +1,18 @@
+
+  <%#=@upload.each_with_index  do |upload| %>
+    
+      <%#=upload.each do |lesson| %>
+        
+          <%#= image_tag(lesson.avatar, :size => "100x50") %>
+        
+      <%#=end %>
+    
+  <%#=#end%>
+
+	<% @uploads.each_with_index do |upload, index| %>
+		<%if index%3==0%>
+		<br>
+		<%end%>
+			<%= image_tag(upload.avatar, :size => "100x50") %>
+	<%end%>
+

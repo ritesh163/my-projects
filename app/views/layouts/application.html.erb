@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Social App</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<div class="container">
+<body>
+
+	<% if user_signed_in? %>
+		<h2>Welcome to my social App</h2>
+		Signed in as <%= current_user.name %>. Not you?
+		<li><%= link_to 'Post',posts_path %></li>
+		<li><%= link_to 'Upload Image',new_upload_path%></li>
+		<li><%= link_to 'Sign out', destroy_user_session_path,:method => :delete %></li>
+		
+		<%#= link_to 'Sign in to Facebook',user_omniauth_authorize_path(:facebook) %>
+		<%#= link_to "Sign in to Google",user_omniauth_authorize_path(:google_oauth2)%>
+		<%#= link_to "Sign in to Twitter", user_omniauth_authorize_path(:twitter) %>
+		<%#= link_to "Sign in to Linkedin", user_omniauth_authorize_path(:linkedin) %>
+		<%#= link_to "Sign up", new_user_registration_path %>
+		<%#= link_to 'Sign in',new_user_session_path %>
+		
+	<%end%>
+
+<%= yield %>
+
+</body>
+</div>
+</html>

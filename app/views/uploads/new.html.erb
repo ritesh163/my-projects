@@ -1,0 +1,15 @@
+<%= form_for(@upload) do |f| %>   
+  
+  <div class="field">
+ 	  <%= f.label :image %><br>
+      <%= f.file_field :avatar%><br>
+      <%#= f.link_to_remove "Remove this task" %>
+   
+      <p><%#= f.link_to_add "Add a task", :uploads %></p>
+    
+    
+  </div><br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
